@@ -3,8 +3,12 @@
     <string name="quantity">QUANTITY</string>
     <string name="zero">0</string>
     <string name="order">ORDER</string>
-    <string name="price">PRICE</string>
+    <string name="order_summary">ORDER SUMMARY</string>
     <string name="bucks_zero">$0</string>
     <string name="plus">+</string>
     <string name="minus">-</string>
+    <string name="whipped_creame">Whipped creame</string>
+    <string name="toppings">TOPPINGS</string>
+    <string name="chocolate">Chocolate</string>
+    <string name="name">Name</string>
 </resources>

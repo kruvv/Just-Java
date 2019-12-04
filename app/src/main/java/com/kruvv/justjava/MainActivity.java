@@ -3,7 +3,10 @@ package com.kruvv.justjava;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.text.NumberFormat;
@@ -15,6 +18,10 @@ import java.text.NumberFormat;
 public class MainActivity extends AppCompatActivity {
 
     int quantity = 0;
+    EditText editName;
+    boolean hasWhippedCream;
+    boolean hasChocolate;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,25 +33,25 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        display(quantity);
-        displayPrice(quantity * 5);
+        editName = findViewById(R.id.edit_name_edit_text);
+
+        String priceMessage = "Name: " + editName.getText() +
+                "\nAdd whipped creame? " + hasWhippedCream +
+                "\nAdd chocolate? " + hasChocolate +
+                 "\nQuantity: " + quantity +
+                    "\nTotal $" + calculatePrice(quantity) +
+                        "\nThank you!";
+        displayMessage(priceMessage);
     }
 
     /**
      * This method displays the given quantity value on the screen.
      */
-    private void display(int number) {
+    private void displayQuantity(int number) {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
         quantityTextView.setText("" + number);
     }
 
-    /**
-        This method displays the given quantity value on the screen.
-     */
-    private void displayPrice(int number) {
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-        priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
-    }
 
     /**
      * This method increments the value of the variable on the screen.
@@ -52,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
     public void increment(View view) {
         if(quantity >= 0){
             quantity++;
-            display(quantity);
+            displayQuantity(quantity);
         }
 
     }
@@ -63,8 +70,47 @@ public class MainActivity extends AppCompatActivity {
     public void decrement(View view) {
         if(quantity >= 2){
             --quantity;
-            display(quantity);
+            displayQuantity(quantity);
         }
+
+    }
+
+    /**
+     * This method displays the given text on the screen.
+     */
+    private void displayMessage(String message) {
+        TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
+        orderSummaryTextView.setText(message);
+    }
+
+    /**
+     * Calculates the price of the order based on the current quantity.
+     *
+     * @return the price
+     */
+    private int calculatePrice(int quantity) {
+        int price = quantity * 5;
+        return price;
+    }
+
+    public void onCheckboxClicked(View view) {
+
+        switch (view.getId()) {
+            case R.id.checkbox_toppings:
+                hasWhippedCream = ((CheckBox) view).isChecked();
+                break;
+
+            case R.id.checkbox_chocolate:
+                hasChocolate = ((CheckBox) view).isChecked();
+                break;
+        }
+        createOrderSummary(hasChocolate, hasChocolate);
+    }
+
+    /**
+     * This method crate order
+     */
+    public void createOrderSummary(boolean hasWhippedCream, boolean hasChocolate) {
 
     }
 }
