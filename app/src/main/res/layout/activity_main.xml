@@ -9,8 +9,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="16dp"
-        tools:context=".MainActivity"
-        android:gravity="center">
+        tools:context=".MainActivity" >
 
 
         <ImageView
@@ -26,44 +25,39 @@
             android:textSize="16sp"
             android:paddingBottom="16dp"
             android:inputType="text"
-            android:hint="@string/name"/>
+            android:hint="@string/edit_name"/>
 
         <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="@string/toppings"
-                android:textSize="32sp"
-                android:gravity="center"/>
+                android:gravity="center"
+                style="@style/HeaderTextStyle"/>
 
             <CheckBox android:id="@+id/checkbox_toppings"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/whipped_creame"
-                android:paddingLeft="24dp"
-                android:textSize="16sp"
+                android:text="@string/whipped_cream"
+                android:paddingLeft="16dp"
+                android:textSize="15sp"
                 android:onClick="onCheckboxClicked"/>
 
             <CheckBox android:id="@+id/checkbox_chocolate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/chocolate"
-                android:paddingLeft="24dp"
-                android:textSize="16sp"
+                android:paddingLeft="16dp"
+                android:textSize="15sp"
                 android:onClick="onCheckboxClicked"/>
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="@string/quantity"
-                android:textSize="32sp"
-                android:gravity="center"/>
+                style="@style/HeaderTextStyle"/>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center">>
+                android:orientation="horizontal">
 
                 <Button
                     android:layout_width="50dp"
@@ -98,11 +92,9 @@
 
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:text="@string/order_summary"
-                android:textSize="22sp"
-                android:layout_marginTop="16dp"/>
+                android:layout_marginTop="16dp"
+                style="@style/HeaderTextStyle" />
 
             <TextView
                 android:id="@+id/order_summary_text_view"

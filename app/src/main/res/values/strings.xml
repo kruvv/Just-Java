@@ -7,8 +7,16 @@
     <string name="bucks_zero">$0</string>
     <string name="plus">+</string>
     <string name="minus">-</string>
-    <string name="whipped_creame">Whipped creame</string>
+    <string name="whipped_cream">"Whipped cream</string>
     <string name="toppings">TOPPINGS</string>
     <string name="chocolate">Chocolate</string>
-    <string name="name">Name</string>
+    <string name="edit_name">Your name</string>
+    <string name="name">Name:</string>
+    <string name="add_whipped_cream">Add whipped cream?</string>
+    <string name="add_chocolate">Add chocolate?</string>
+    <string name="quantity_two">Quantity:</string>
+    <string name="total">Total $</string>
+    <string name="thank_you">Thank you!</string>
+    <string name="more_then">You cannot order more than 100 cups of coffee</string>
+    <string name="less_then">You cannot order less than 1 cup of coffee</string>
 </resources>
